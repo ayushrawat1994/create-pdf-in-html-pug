@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Sofia+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+<style>
+.name-sec{position: relative;z-index: 11;margin-bottom:0.1cm;border-radius: 0.01cm;display: block;word-break: break-all;-webkit-print-color-adjust: exact;    width:83%; }
+i.fa-quote-left {position: absolute;left: 4px;color: #2d2e43;opacity: 40%;font-size: 0.6cm; margin-top: -0.4cm;}
+  h1,h2,h3 {font-family: 'Sofia Sans', sans-serif;}
+  h3{margin: 0;color:#0b0b0b;font-weight:500;-webkit-print-color-adjust: exact; }
+  .jobPosition span,  .projectName span {    font-family: 'Open Sans', sans-serif;}
+  .skill i {font-size: 0.2cm;padding: 0 0.1cm 0 0;position: relative;top: -0.1cm;}
+  .upperCase {text-transform: uppercase;}
+  .smallText,
+  .smallText span,
+  .smallText p,
+  .smallText a {
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+  }
+  .leftPanel,
+  .leftPanel a {
+    color: #bebebe;
+    text-decoration: none;
+  }
+
+  .leftPanel h2 {color: white;}
+
+  h1 {
+    font-weight: 800;
+    font-size:0.9cm;
+    margin-bottom: 0.09cm;
+    padding:0.3cm 0cm 0;
+    margin-top: 0cm;
+    color:#0b0b0b;
+    text-transform: uppercase;
+    letter-spacing: 0.06cm;
+    -webkit-print-color-adjust: exact;
+  }
+
+  h2 {
+    margin-top: 0.1cm;
+    font-size: 0.46cm;
+    display: flex;
+    color: #0b0b0b;
+    padding-bottom: 0.3cm;
+    -webkit-print-color-adjust: exact;
+    align-items: center;
+    border-bottom: 1px dashed #606060;
+
+
+  }
+
+  .leftPanel,
+  .leftPanel a {
+    font-size: 0.38cm;
+  }
+
+  .projectName span,
+  .jobPosition span {
+    font-size: 0.35cm;
+    color: #303030;
+  }
+
+  .smallText,
+  .smallText span,
+  .smallText p,
+  .smallText a {
+    font-size: 0.35cm;
+    color: #303030;
+  }
+
+  .leftPanel .smallText,
+  .leftPanel .smallText,
+  .leftPanel .smallText span,
+  .leftPanel .smallText p,
+  .smallText a {
+    font-size: 0.35cm;
+    color: #303030;    font-weight: 600;
+    padding-bottom: 0.2cm;
+  }
+
+  .contactIcon {
+    width: 0.7cm;
+    text-align: center;
+    color: #fff;
+    height: 0.7cm;
+    border-radius: 0.1cm;
+    line-height: 0.7cm;    font-size: 0.4cm;
+    background: #2d2e43;
+  }
+
+  p {
+    margin-top: 0.05cm;
+    margin-bottom: 0.05cm;
+  }
+
+  /* End Sizes */
+  .bolded {
+    font-weight: bold;
+  }
+
+  .white {
+    color: white;
+  }
+
+  body {
+    background: #303030;
+    width: 21cm;
+    height: 29.7cm;
+    margin: 0 auto;
+    -webkit-print-color-adjust: exact;
+  }
+
+  page {
+    background: white;
+    display: block;
+    margin: 0 auto;    position: relative;
+    margin-bottom: 0.5cm;
+  }
+
+ page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+  } 
+
+  @page {
+    size: 21cm 29.7cm;
+    padding: 0;
+    margin: 0mm;
+    border: none;
+    border-collapse: collapse;
+  }
+
+  /* End Printing */
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+  }
+
+  .leftPanel {
+    width:28%;
+    -webkit-print-color-adjust: exact;
+    padding:0.7cm 0.4cm;
+    display: flex;
+    flex-direction: column;  
+    align-items: center;
+    z-index: 1111;
+      }
+
+  .rightPanel {
+    width:72%;
+ padding: 0.1cm 0.4cm;  }
+
+  .leftPanel .img-profile img {
+    width: 3.6cm;
+    height: 3.6cm;
+    margin-bottom:0.5cm;
+    border-radius: 74%;
+
+    object-fit: cover;
+    object-position: 50% 50%;
+    border: 1px solid #fff;
+    padding: 0;
+    filter: grayscale(1);
+  }
+
+  .leftPanel .details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skill {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.2cm;
+  }
+
+
+
+  .yearsOfExperience {
+    width: 1.6cm;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .alignleft {
+    text-align: left !important;
+    width: 1cm;
+  }
+
+  .alignright {
+    text-align: right !important;
+    width: 0.6cm;
+    margin-right: 0.1cm
+  }
+
+  .workExperience{margin: 0.75cm 0;}
+  .workExperience>ul {
+    list-style-type:disc;
+    padding-left: 0.5cm;
+}
+
+  .workExperience>ul>li {
+    position: relative;
+    margin: 0;
+    padding-bottom: 0.2cm;
+    padding-left: 0cm;
+    font-size: 0.35cm;    font-family: 'Open Sans', sans-serif;
+  }
+  .workExperience>ul>li:last-child {
+    padding-bottom: 0.0cm;
+}
+
+
+
+  .jobPosition {
+    display: flex;
+    flex-direction: row;
+    justify-content:left;
+    align-items: center;
+  }
+  .jobPosition p{    font-size: 0.35cm;    font-family: 'Open Sans', sans-serif;color: #303030;}
+
+  .item {
+    padding-bottom: 0.4cm;
+    padding-top: 0.4cm;
+  }
+
+
+  .item h2 {
+    margin-top: 0;
+    margin-bottom: 0.5cm;
+    color: #0b0b0b;
+    letter-spacing: 0.02cm;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .lastParagrafNoMarginBottom {
+    margin-bottom: 0;
+  }
+
+  .workExperience>ul>li ul {
+    padding-left: 0.5cm;
+    list-style-type: disc;
+  }
+  .leftPanel .smallText img {
+    width: 0.34cm;    position: relative;
+    top: 2px;
+    height:0.34cm;
+    padding: 0 0.2cm 0 0;
+}
+ul.hobbies {
+    padding: 0 0.5cm;
+    font-weight: 600;
+    list-style-type:disc;
+}
+ul.hobbies li {
+    padding-bottom: 0.2cm;
+}
+li::marker {
+    color:#303030;}
+
+p.dflexall
+{    display: flex;
+    align-items:baseline;
+    word-break: break-all;}
+
+    .heading-holder {
+    width: 100%;
+    display: flex;
+    padding: 0.7cm 0 0;
+}
+    img{max-width:100%;}
+
+
+.top-img-section img{width: 3cm;
+  width: 3.1cm;
+    height: 3.1cm;
+    margin-bottom: 0.2cm;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    border: 2px solid #c1c785;
+ }
+
+    .top-img-section{text-align: left;padding:0.4cm 0.4cm 0;  -webkit-print-color-adjust: exact;}
+    .marker-box{     width: 44px;height: 100%;display: inline-block;background: url(img/dot.png)no-repeat;position: absolute; right: 17px; top: 0px; border-radius: 0;
+    -webkit-print-color-adjust: exact; background-size: contain;}
+    
+    .marker-box1{      width: 36px; height: 11%; display: inline-block; background: url(img/dot.png)no-repeat; position: absolute;left: 0px; top: 44px;  border-radius: 0;  -webkit-print-color-adjust: exact;  background-size: contain;  transform: rotate(90deg);}
+    
+    .img-profile{ z-index: 1;}
+    .bg-objective{margin:0.2cm 0;}
+    .bg-objective p{    font-size: 0.35cm; font-family: 'Open Sans', sans-serif;color: #303030;    font-weight: 400;}
+
+h2 span.lftbrder-heading{    width: 8px;
+    height: 8px;
+    background: #606060;
+    display: inline-block;
+    margin: 0 10px 0 0;
+    border-radius: 50%;}
+
+
+    
+
+</style>
+
+<body>
+  <page size="A4">
+
+
+      <div class="container">     
+      <div class="leftPanel">    
+        <div class="img-profile">  <img src="img/profile19.jpg" /></div>        
+        <div class="details">
+          <div class="item bottomLineSeparator">
+            <h2>    Contact      </h2>
+            <div class="smallText">
+              <p class="dflexall"><img src="img/phone-call.svg">+1 885 234 3691</p>
+              <p class="dflexall"> <img src="img/email.svg">dodger@gmail.com</p>
+              <p class="dflexall"> <img src="img/location.svg">21, HN, New York</p>
+              <p> <img src="img/Calendar.svg">01/01/1993 </p>       
+            </div>
+          </div>
+          <div class="item bottomLineSeparator">
+            <h2>  Skills     </h2>
+            <div class="smallText">
+        
+              <ul class="hobbies">
+                <li>Customer Service Excellence</li>
+               <li>Process Optimization</li>
+               <li>Team Leadership</li>
+               <li>Data Entry and Management</li>
+               <li>Quality Assurance</li>
+            </ul>        
+            </div>
+          </div>
+          <div class="item">
+            <h2>Interests and Hobbies</h2>
+
+            <div class="smallText">
+              <ul class="hobbies">
+                <li>Reading</li>
+                <li>Badminton</li>
+                <li>Travelling</li>
+                <li>Cooking </li>
+              
+
+            </ul>
+              </div>        
+          </div>
+        </div>
+      </div>
+      <div class="rightPanel">
+        <div class="heading-holder">
+         
+          <div class="name-sec">
+            <h1>Artful Dodger  </h1>
+            <div class="smallText" >
+              <h3>  BPO (Business Process Outsourcing) </h3>
+            </div>
+          </div>
+         
+       
+  
+        </div>
+   
+        <div class="marker-box"></div>
+        <div class="marker-box1"></div>
+  
+        <div class="bg-objective">
+          <p>
+            As a team leader with strong communication skills and experience in the BPO industry, I am seeking a role where I can utilize my leadership abilities to drive team success and achieve company goals.
+          </p>
+          </div>
+              <div class="workExperience" style=" margin: 0.35cm 0;">
+                <h2>Professional Summary </h2>
+                <ul>
+                  <li>
+                    <div class="jobPosition">
+                    <p>Proven ability to lead and inspire teams towards achieving shared goals and objectives.</p>
+                    </div>                           
+                  </li>
+
+                  <li>
+                    <div class="jobPosition">
+                    <p>Experience in setting performance standards, conducting evaluations, and implementing improvement initiatives.
+                    </p>
+                    </div>                           
+                  </li>
+                  <li>
+                    <div class="jobPosition">
+                    <p>Dedicated to coaching and developing team members, enhancing their skills and fostering career growth.</p>
+                    </div>                           
+                  </li>
+               
+                </ul>                 
+                    </div>
+                    <div class="workExperience">
+                      <h2>Education </h2>
+                      <ul>
+                        <li>
+                          <div class="jobPosition">
+                            <span class="bolded">
+                              Bachelor's Degree  Business Administration
+                            </span>                                                          
+                          </div>
+                          <div class="projectName">
+                            <span>
+                              June 2018- August 2022
+                            </span>
+                          </div>
+                        </li>
+                        </ul>                       
+                          </div>
+
+                    <div class="workExperience">
+                      <h2>Industry Experience </h2>
+                      <ul>
+                        <li>
+                          <div class="jobPosition">
+                            <span class="bolded">
+                          Team Leader
+                            </span>     
+                                                                     
+                          </div>  
+                          <div class="projectName">
+                            <span>
+                              Communication
+                            </span>
+                          </div>
+                                                                  
+                        </li>
+                        </ul>                       
+                          </div>
+
+                          <div class="workExperience">
+                            <h2>Work Experience </h2>
+                            <ul>
+                              <li>
+                                <div class="jobPosition">
+                                  <span class="bolded">
+                                  Team Lead -  Alpha Ltd.
+                                  </span>                                                          
+                                </div>
+                                <div class="projectName">
+                                  <span>
+                                    March 2022 - Present
+                                  </span>
+                                </div>
+                              </li>
+                              </ul>                       
+                                </div>
+
+                           
+
+
+                                <div class="workExperience">
+                                  <h2>Job Responsibilities</h2>
+                                  <ul>
+                                    <li> <div class="smallText">
+                                        <p> Led a team of 15 customer service representatives, providing guida
+                                          nce and support to ensure high-quality service delivery. </p>                                 
+                                        </div> </li>
+
+                                        <li> <div class="smallText">
+                                          <p> Utilize analytics tools to measure marketing performance, analyze data, and make informed decisions to optimize campaigns. </p>                                 
+                                          </div> </li>
+
+                                          <li> <div class="smallText">
+                                            <p> Conducted training sessions for new team members, ensuring they
+                                              were equipped with the necessary skills and knowledge to excel in
+                                              their roles.</p>                                 
+                                            </div> </li>        
+                                            <li> <div class="smallText">
+                                              <p> Collaborated with other team leaders and managers to streamline
+                                                processes and improve overall eciency.</p>                                 
+                                              </div> </li> 
+                                              <li> <div class="smallText">
+                                                <p> Maintained accurate records and reports of team performance and
+                                                  productivity.</p>                                 
+                                                </div> </li>                            
+                                   </ul>                             
+                                      </div>
+        </div>
+
+    
+      </div>
+    </div>
+  </page>
+
+<page size="A4">
+    <div class="container">
+      <div class="leftPanel">      
+      </div>
+  
+      <div class="rightPanel">
+        <div class="workExperience">         
+          <ul>           
+      
+              <li> <div class="smallText">
+                <p> Created graphics for the company website and social media sites, including social media graphics, brochures, logos and billboards. </p>                                 
+                </div> </li>   
+                </ul>           
+              </div>
+              <div class="workExperience">
+                <h2>Projects</h2>
+                <ul>
+                  <li>
+                    <div class="jobPosition">
+                      <span class="bolded">
+                       Project Name:  
+                      </span>
+                      <span class="bolded" style="font-weight: 400;"> Talent Anywhere  </span>
+                      
+                    </div>           
+                   
+                    <div class="projectName bolded">
+                      <span class="bolded">
+                        Work Place:
+                       </span>
+                       <span class="bolded" style="font-weight: 400;">Gurgaon </span>              
+                    </div>               
+                    <div class="projectName bolded">
+                      <span>
+                       Description:
+                      </span>
+                     </div>
+                    <div class="projectName bolded">
+                   <span style="font-weight: 400;"> handled whole project one</span>
+                    </div>
+                    <div class="projectName bolded">
+                      <span>
+                        Role with Responsibilities:
+                      </span>
+                    
+                    </div>
+                    <div class="projectName bolded">
+                     <span style="font-weight: 400;"> sr Angular dev</span>
+                    </div>
+                 
+                  </li>
+                  </ul>                       
+                    </div>
+
+                    <div class="workExperience">
+                      <h2>Social Links </h2>
+                      <ul>
+                        <li>
+                          <div class="jobPosition" style="align-items: baseline;">
+                            <p style="width:14%;font-weight: 600;"> LinkedIn: </p>
+                            <span style="word-break: break-all;padding-left: 5px;width:86%;">LinkedIn Link</span>  
+                          </div>                                       
+                        </li>
+
+                        <li>
+                          <div class="jobPosition" style="align-items: baseline;">
+                            <p style="width:14%;font-weight: 600;">X (Twitter):  </p>
+                            <span style="word-break: break-all;padding-left: 5px;width:86%;">Twitter Link</span>  
+                          </div>                                       
+                        </li>
+      
+                      </ul>                 
+                          </div>
+
+                          <div class="workExperience">
+                            <h2>Portfolio Links </h2>
+                            <ul>
+
+                              <li>
+                                <div class="jobPosition" style="align-items: baseline;">
+                                  <p style="width:14%;font-weight: 600;"> Behance: </p>
+                                  <span style="word-break: break-all;padding-left: 5px;width:86%;">behance Link</span>  
+                                </div>                                       
+                              </li>
+                              <li>
+                                <div class="jobPosition" style="align-items: baseline;">
+                                  <p style="width:14%;font-weight: 600;"> Pinterest: </p>
+                                  <span style="word-break: break-all;padding-left: 5px;width:86%;">pinterest Link</span>  
+                                </div>                                       
+                              </li>
+                            </ul>                 
+                                </div>
+                                <div class="workExperience">
+                                  <h2><span class="lftbrder-heading">&nbsp;</span>Certifications </h2>
+                                  <ul>
+
+                                    <li>
+                                      <div class="jobPosition" style="align-items: baseline;">
+                                        <p style="font-weight: 600;"> Google Digital Marketing: </p>
+                                        <span style="word-break: break-all;padding-left: 5px;">&nbsp; 2021</span>  
+                                      </div>                                       
+                                    </li>                             
+                                  </ul>                 
+                                      </div> </div>
+   
+  </page>   
+
+</body>
+
+</html>
